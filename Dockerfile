@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Derek Bourgeois <derek@ibourgeois.com>
+MAINTAINER ervan_angkoso <ervancaturangkoso@gmail.com>
 
 # set some environment variables
 ENV APP_NAME app
@@ -55,9 +55,9 @@ VOLUME ["/var/cache/nginx"]
 VOLUME ["/var/log/nginx"]
 
 # install php
-RUN apt-get install -y --force-yes php7.0-fpm php7.0-cli php7.0-dev php7.0-pgsql php7.0-sqlite3 php7.0-gd \
-    php-apcu php7.0-curl php7.0-mcrypt php7.0-imap php7.0-mysql php7.0-readline php-xdebug php-common \
-    php7.0-mbstring php7.0-xml php7.0-zip
+RUN apt-get install -y --force-yes php7.0-fpm php7.1.3-cli php7.1.3-dev php7.1.3-pgsql php7.1.3-sqlite3 php7.1.3-gd \
+    php-apcuphp7.1.3-curl php7.1.3-mcrypt php7.1.3-imap php7.1.3-mysql php71.3.-readline php-xdebug php-common \
+    php7.1.3-mbstring php7.1.3-xml php7.1.3.zip
 RUN sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/7.0/cli/php.ini && \
     sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.0/cli/php.ini && \
     sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php/7.0/cli/php.ini && \
